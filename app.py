@@ -11,6 +11,7 @@ df = pd.read_csv(CSV_PATH)[['title', 'overview', 'release_date', 'vote_average',
 
 # Compute TF-IDF and similarity
 def get_recommendations(user_input, df, top_n=5):
+    #Building Vectorizer
     vectorizer = TfidfVectorizer(stop_words='english')
     tfidf_matrix = vectorizer.fit_transform(df['overview'])
     
